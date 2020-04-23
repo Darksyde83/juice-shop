@@ -31,5 +31,5 @@ jobs:
         aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
         sed -i "s#IMAGE_NAME#darksyde/juice#g" kustomization.yaml
         sed -i "s/IMAGE_TAG/sha-$(git rev-parse --short HEAD)/g" kustomization.yaml
-        aws eks update-kubeconfig --name juiceshop
+        aws eks update-kubeconfig --name isen
         kubectl kustomize . | kubectl apply -f -
