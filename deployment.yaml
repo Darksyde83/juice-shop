@@ -12,11 +12,11 @@ spec:
   template:
     metadata:
       labels:
-        app: wjuiceshop
+        app: juiceshop
     spec:
       containers:
       - name: juiceshop
-        image: juiceshop:sha-72fcae8
+        image: juiceshop
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
