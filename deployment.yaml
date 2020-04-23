@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webserver-deployment
+  name: juiceshop-deployment
   labels:
-    app: webserver
+    app: juiceshop
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: webserver
+      app: juiceshop
   template:
     metadata:
       labels:
-        app: webserver
+        app: wjuiceshop
     spec:
       containers:
       - name: juiceshop
@@ -24,10 +24,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: webserver-service
+  name: juiceshop-service
 spec:
   selector:
-    app: webserver
+    app: juiceshop
   ports:
     - port: 80
       targetPort: 3000
