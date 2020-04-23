@@ -32,7 +32,7 @@ jobs:
         sed -i "s#IMAGE_NAME#darksyde/juiceshop#g" kustomization.yaml
         sed -i "s/IMAGE_TAG/sha-$(git rev-parse --short HEAD)/g" kustomization.yaml
         aws eks update-kubeconfig --name isen
-        kubectl kustomize . | kubectl apply -f 
+        kubectl kustomize . | kubectl apply -f -
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       env:
