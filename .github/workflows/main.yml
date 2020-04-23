@@ -14,6 +14,12 @@ jobs:
  
     steps:
     - uses: actions/checkout@v2
+    - name: Install NPM dependencies
+      run: |
+        npm install --production --unsafe-perm
+    - uses: sburris/dependency-check-action@master
+      with:
+        Project-Name: juice-shop
     - name: build-push
       uses: docker/build-push-action@v1
       with:
