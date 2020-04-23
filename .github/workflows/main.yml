@@ -23,7 +23,7 @@ jobs:
         repository: ${{ secrets.DOCKER_USERNAME }}/juiceshop
         tag_with_sha: true
     - name: kubernetes
-      run: | 
+      run: |
         aws configure set default.region $AWS_REGION
         aws configure set default.output json
         aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
