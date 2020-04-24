@@ -42,3 +42,11 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    - name: ZAP Scan
+      uses: zaproxy/action-baseline@v0.2.0
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        docker_name: ${{ secrets.DOCKER_USERNAME }}
+        target: 'https://www.example.com'
+        rules_file_name: '.zap/rules.tsv'
+        md_options: '-a'
