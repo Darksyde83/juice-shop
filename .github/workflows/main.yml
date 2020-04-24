@@ -42,6 +42,4 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         docker_name: ${{ secrets.DOCKER_USERNAME }}
-        target: 'https://www.example.com'
-        rules_file_name: '.zap/rules.tsv'
-        md_options: '-a'
+        target: https://juice-shop.herokuapp.com
