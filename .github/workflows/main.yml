@@ -21,11 +21,6 @@ jobs:
         registry: docker.io
         repository: ${{ secrets.DOCKER_USERNAME }}/juiceshop
         tag_with_sha: true
-    - name: use klar
-      run: |
-        wget https://github.com/optiopay/klar/releases/download/v2.4.0/klar-2.4.0-linux-amd64 -O klar
-        chmod +x klar
-        CLAIR_ADDR=http://clair.3r1.co:6060 ./klar ${{ secrets.DOCKER_USERNAME }}/juiceshop:sha-$(git rev-parse --short HEAD)
     - name: kubernetes
       run: | 
         aws configure set default.region $AWS_REGION
